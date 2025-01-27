@@ -1,0 +1,37 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  min-width: 350px;
+}
+
+.editorWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editorField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.response {
+  text-align: start;
+}
+
+.response span {
+  padding-right: 1rem;
+  word-break: normal;
+  font-weight: 600;
+}
+
+.response ul {
+  background-color: rgb(218, 218, 231);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
