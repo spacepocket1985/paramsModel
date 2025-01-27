@@ -1,26 +1,29 @@
-import { useState } from 'react';
+import ParamEditor, { Param, Model } from './components/ParamEditor';
 
 import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0);
+const params: Param<string | number>[] = [
+  { id: 1, name: 'Назначение', type: 'string' },
+  { id: 2, name: 'Длина', type: 'string' },
+  { id: 3, name: 'Вес', type: 'number' },
+  {
+    id: 4,
+    name: 'Цвет',
+    type: 'select',
+    options: ['Красный', 'Зеленый', 'Синий'],
+  },
+];
 
-  return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
-}
+const model: Model<string | number> = {
+  paramValues: [
+    { paramId: 1, value: 'повседневное' },
+    { paramId: 2, value: 'макси' },
+    { paramId: 3, value: 75 },
+    { paramId: 4, value: 'Красный' },
+  ],
+  colors: [],
+};
+
+const App = () => <ParamEditor params={params} model={model} />;
 
 export default App;
